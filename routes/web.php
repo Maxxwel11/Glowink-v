@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\addbarangController;
+use App\Http\Controllers\AdminpageController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\detailprodukController;
@@ -36,4 +38,13 @@ Route::get('/cheackout', [CheckoutController::class, 'checkout']);
 Route::get('/kategori', [kategoriController::class, 'kategori' ]);
 Route::get('/add_barang', [addbarangController::class, 'add_barang']);
 Route::get('/detailproduk', [detailprodukController::class , 'deataiproduk']);
+
+
+
+
+// admin
 Route::get('login', [AuthController::class, 'index']);
+Route::get('adminpage', [AdminpageController::class, 'index']);
+Route::get('calendar', [CalendarController::class, 'index']);
+Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');
+Route::get('/adminpage', [AdminpageController::class, 'index'])->name('adminpage');
